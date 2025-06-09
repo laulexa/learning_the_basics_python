@@ -1,12 +1,12 @@
 #operadores numericos
 a = 10
 b = 10
-print("Suma", a + b)
-print("Resta:", a - b)
-print("Multiplicacion:", a * b)
-print("Potenciacion:", a ** b)
-print("Division:", a / b)
-print("Parte Entera de la Division:", a // b)
+print("plus:", a + b)
+print("minus:", a - b)
+print("times:", a * b)
+print("Exponentiation:", a ** b)
+print("Divided by:", a / b)
+print("Int of Division:", a // b)
 print("Module:", a % b)
 a = a + 2
 #a +=2
