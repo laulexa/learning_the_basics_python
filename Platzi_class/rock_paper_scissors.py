@@ -16,7 +16,7 @@ elif (
     (player_1_choice == "rock" and player_2_choice == "scissors") or 
     (player_1_choice == "paper" and player_2_choice == "rock") or 
     (player_1_choice == "scissors" and player_2_choice == "paper")
-):
-     print("player One wins")
+    ):
+    print("player One wins")
 else:
     print("Player Two wins")
