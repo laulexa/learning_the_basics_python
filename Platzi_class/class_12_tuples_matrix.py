@@ -8,9 +8,9 @@ print(type(matrix)) #<class 'list'>
 #tuple
 numbers = (1,2,3,4,5)
 print(numbers)
-print(type(numbers))
+print(type(numbers)) #<class 'tuple'>
 print(numbers[0])
-#numbers[0] = 'unos' error Tupleas are immutable
+#numbers[0] = 'unos' error Tuples are immutable
 
 #for tuples I use () and for lists I use []
 

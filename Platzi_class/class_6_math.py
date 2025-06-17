@@ -1,6 +1,6 @@
 #operadores numericos
-a = 10
-b = 10
+a = 3
+b = 2
 print("plus:", a + b)
 print("minus:", a - b)
 print("times:", a * b)

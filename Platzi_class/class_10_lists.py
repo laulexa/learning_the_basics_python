@@ -12,12 +12,14 @@ to_do = ["head out to the hotel", "have lunch", "visit a museum", "go back to th
 print(to_do)
 
 numbers = [1, 2, 3, 4, "five"]
+print(numbers)
 print(type(numbers))
 
 mix = [1, "Two", 3.14, True, [1, 2, 3]]
 print(mix)
 print(len(mix))
-print("first element:", mix[0])
+print("first element:", mix[5])
+print("second element, inside the list :", mix[4][1])
 print("second element:", mix[1])
 print("last element:", mix[-1])
 
