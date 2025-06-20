@@ -1,6 +1,6 @@
 #Exercise 1
 def add_item(current_cart, items_to_add):
-    updated_cart = current_cart.copy()
+    updated_cart = current_cart.copy() # I copy the dictionary to safely add or update items in updated_cart,  The original current_cart will stay unchanged. This is important if you need to preserve the original input, especially in functions or tests where you don’t want side effects.
     for item in items_to_add:
         updated_cart[item] = updated_cart.get(item, 0) + 1
     print(updated_cart)
@@ -87,3 +87,31 @@ def send_to_store(cart, aisle_mapping):
 send_to_store({'Banana': 3, 'Apple': 2, 'Orange': 1, 'Milk': 2},
                 {'Banana': ['Aisle 5', False], 'Apple': ['Aisle 4', False], 'Orange': ['Aisle 4', False], 'Milk': ['Aisle 2', True]})
 #Exercise 6
+
+def update_store_inventory(fulfillment_cart, store_inventory):
+    """Update store inventory levels with user order.
+
+    :param fulfillment cart: dict - fulfillment cart to send to store.
+    :param store_inventory: dict - store available inventory
+    :return: dict - store_inventory updated.
+    """
+    my_updated_inventory = store_inventory.copy()
+
+    for item, order_info in fulfillment_cart.items():
+        order_quantity = order_info[0]
+        print(order_quantity)
+        inventory_info = my_updated_inventory[item]
+        print(inventory_info)
+
+        current_quantity = inventory_info[0]
+        new_quantity = current_quantity - order_quantity
+
+        if new_quantity == 0:
+            my_updated_inventory[item][0] = 'Out of Stock'
+        else:
+            my_updated_inventory[item][0] = new_quantity
+    
+    return my_updated_inventory
+
+update_store_inventory({'Orange': [1, 'Aisle 4', False], 'Milk': [2, 'Aisle 2', True], 'Banana': [3, 'Aisle 5', False], 'Apple': [2, 'Aisle 4', False]},
+{'Banana': [0, 'Aisle 5', False], 'Apple': [12, 'Aisle 4', False], 'Orange': [1, 'Aisle 4', False], 'Milk': [4, 'Aisle 2', True]})
