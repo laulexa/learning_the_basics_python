@@ -185,3 +185,16 @@ plants_2 = ('🌸','🌴', '🌺', '🌲', '🌻', '🌵')
 fruit_and_flowers = plants_1.symmetric_difference(plants_2)
 print(fruit_and_flowers)
 #{'🌸', '🌺', '🍈', '🥑', '🥭','🌻' }
+
+fruit_and_flowers ^ plants_1
+#{'🌲',  '🌸', '🌴', '🌵','🌺', '🌻'}
+
+fruit_and_flowers ^ plants_2
+#{ '🥑', '🌴','🌲', '🌵', '🍈', '🥭'}
+
+#Note: A symmetric difference of more than two sets will result in a set that includes both the elements unique to each set AND 
+# elements shared between more than two sets in the series.
+
+#To obtain only items unique to each set in the series, intersections between all 2-set combinations need to be aggregated in a separate step,
+#and removed:
+
