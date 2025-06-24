@@ -1,2 +1,1 @@
-
-print(perennial_herbs)
+set(dishes).difference(appetizers)
