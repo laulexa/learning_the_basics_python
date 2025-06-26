@@ -1,56 +1,49 @@
-class Vehicle:
-    def __init__(self, brand, model, units, price):
+class Car:
+    def __init__(self, brand, model, price):
         self.brand = brand
         self.model = model
         self.price = price
-        self.available = True
+        self.is_available = True
 #        self.units = units
 
-    def car_sold(self):
-        if self.available:
-            self.available = False
+    def sell(self):
+        if self.is_available:
+            self.is_available = False
             print(f"the car {self.brand} {self.model} has been sold")
         else:
+            print("Hola")
             print(f"the car {self.brand} {self.model} is not available")
 
     def check_availability(self):
-        return self.available
+        return self.is_available
     
     def get_price(self):
         return self.price
 
-''' def car_purchase(self, units):
-        if units >= 1:
-            print(f"there are {self.units} cars available")
-        else:
-            self.available = False
-            print("There are no cars available")'''
-
 class Customer:
-    def __init__(self, name, user_id):
+    def __init__(self, name):
         self.name = name
-        self.user_ide = user_id
-        self.cars_bought = []
+        self.cars_purchased = []
     
-    def buy_car(self, vehicle):
-        if vehicle.check_availability():
-            vehicle.car_sold()
-            self.cars_bought.append(vehicle)
+    def buy_car(self, car):
+        if car.check_availability():
+            car.sell()
+            self.cars_purchased.append(car)
         else:
-            (f"The car {vehicle.brand} {vehicle.model} Is not available")
+            print(f"The car {car.brand} {car.model} Is not available")
 
-    def inquire_vehicle(self, vehicle):
-        availability = "available" if vehicle.check_availability() else "not available"
-        print(f"The vehicle {vehicle.brand} {vehicle.model} is {availability} and the price is: {vehicle.price}")
+    def inquire_car(self, car):
+        availability = "available" if car.check_availability() else "not available"
+        print(f"The car {car.brand} {car.model} is {availability} and the price is: {car.price}")
 
 class Dealership:
     def __init__(self):
         self.inventory = []
         self.customers = []
     
-    def add_car(self, vehicle):
-        self.inventory.append(vehicle)
-        print(f"the car {vehicle.brand} {vehicle.model} has been added to the inventory")
+    def add_car(self, car):
+        self.inventory.append(car)
+        print(f"the car {car.brand} {car.model} has been added to the inventory")
     
     def register_customer(self, customer):
         self.customers.append(customer)
@@ -58,16 +51,56 @@ class Dealership:
 
     def show_available_cars(self):
         print("The available cars in the car dealership are: ")
-        for vehicle in self.inventory:
-            if vehicle.check_availability():
-                print(f"- {vehicle.brand} {vehicle.model} is {vehicle.get_price()}")
+        for car in self.inventory:
+            if car.check_availability():
+                print(f"- {car.brand} {car.model} is {car.get_price()}")
 
 
 
+#Create cars
+car1 = Car("Ford","500", 5000)
+car2 = Car("Mazda","CX-50", 35000)
+car3 = Car("TOYOTA","Corolla", 25000)
 
-vehicle1 = Vehicle("Ford",2, 5000)
-vehicle1.car_availability()
-vehicle1.car_purchase(2)
-    
+#Create clients
+customer1 = Customer("Carlos")
 
-#Available, price, buy one
+#create the dealership and add cars and clients
+dealership = Dealership()
+dealership.add_car(car1)
+dealership.add_car(car2)
+dealership.add_car(car3)
+dealership.register_customer(customer1)
+
+#Show available cars
+dealership.show_available_cars()
+
+#Client inquire a car
+customer1.inquire_car(car1)
+
+# Client buys a car
+customer1.buy_car(car1)
+
+#Show available cars again
+dealership.show_available_cars()
+
+customer1.inquire_car(car2)
+customer1.inquire_car(car3)
+
+customer1.buy_car(car2)
+dealership.show_available_cars()
+
+customer1.buy_car(car3)
+dealership.show_available_cars()
+
+customer1.buy_car(car1)
+customer1.buy_car(car2)
+customer1.buy_car(car3)
+
+customer1.inquire_car(car1)
+customer1.inquire_car(car2)
+customer1.inquire_car(car3)
+
+
+#Client tries to buy a sold car
+
