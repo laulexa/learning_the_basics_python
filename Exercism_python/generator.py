@@ -25,14 +25,12 @@ def generate_seats(number):
     seat_letters = ['A', 'B', 'C', 'D']
     index = 0
     row_number = 1
-
     for _ in range(number):
         if index == len(seat_letters):
             index = 0
             row_number += 1
             if row_number == 13:
-                row_number += 1  # Skip 13
-
+                row_number += 1
         yield str(row_number) + seat_letters[index]
         index += 1
 
