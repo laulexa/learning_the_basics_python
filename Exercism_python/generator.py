@@ -39,3 +39,15 @@ print(next(letters))
 print(next(letters))
 print(next(letters))
 print(next(letters))
+
+#Exercise 3
+def assign_seats(passengers):
+    seats = generate_seats(len(passengers))
+    return {passenger: next(seats) for passenger in passengers}
+
+passengers = ['Jerimiah', 'Eric', 'Bethany', 'Byte', 'SqueekyBoots', 'Bob']
+assign_seats(passengers)
+
+#exercise 4
+def generate_codes(seat_numbers, flight_id):
+    
