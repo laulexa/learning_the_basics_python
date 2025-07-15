@@ -1,15 +1,15 @@
 def student_ranking(student_scores, student_names):
     print(enumerate(student_names))
     print(enumerate(student_scores))
-    
-student_ranking (student_scores = [100, 99, 90, 84, 66, 53, 47], student_names =  ['Joci', 'Sara','Kora','Jan','John','Bern', 'Fred'])
+
+#student_ranking (student_scores = [100, 99, 90, 84, 66, 53, 47], student_names =  ['Joci', 'Sara','Kora','Jan','John','Bern', 'Fred'])
 
 def round_scores(student_scores):
 
     return [round(number) for number in student_scores]
-   
 
-round_scores([90.33, 40.5, 55.44, 70.05, 30.55, 25.45, 80.45, 95.3, 38.7, 40.3])
+
+#round_scores([90.33, 40.5, 55.44, 70.05, 30.55, 25.45, 80.45, 95.3, 38.7, 40.3])
 
 
 
@@ -61,5 +61,5 @@ def perfect_score(student_info):
             return student
     return []
 
-perfect_score(student_info=[["Charles", 90], ["Tony", 80], ["Alex", 0]])
+#perfect_score(student_info=[["Charles", 90], ["Tony", 80], ["Alex", 0]])
 
