@@ -98,7 +98,7 @@ def is_armstrong_number(number):
         print("False")
         return False
 
-is_armstrong_number(154)
+#is_armstrong_number(154)
 
 #better solution
 def is_armstrong_number2(number2):
@@ -107,4 +107,23 @@ def is_armstrong_number2(number2):
     sum_of_powers1 = sum(int(digit) ** count1 for digit in string_number2)
     return sum_of_powers1 == number2
 
-is_armstrong_number2(154)
+#is_armstrong_number2(154)
+
+#Collatz Conjecture
+def steps(number):
+    steps_number = 0
+    if number <= 0:
+        raise ValueError("Only positive integers are allowed")
+    if number == 1:
+        return steps_number
+    while number > 1:
+        if number % 2 == 0:
+            number = number / 2
+            steps_number += 1
+        else:
+            number = (number * 3) + 1
+            steps_number += 1
+    print(steps_number)
+    return steps_number
+
+steps(0)
