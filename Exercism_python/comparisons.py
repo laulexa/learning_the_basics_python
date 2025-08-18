@@ -4,7 +4,7 @@
         number_one = 10
     if card_two in ['J', 'K', 'Q']:
         number_two = 10
-    
+
     if card_one == 'A':
         print(card_one)
         number_one = 1
@@ -19,12 +19,12 @@
         number_one = card_one
         print(number_one)
         print('type number 1',type(number_one))
-        
+
     if card_two in [2, 3, 4, 5, 6, 7, 8, 9]:
         number_two = card_two
         print(number_two)
         print('type number 2',type(number_two))
-    
+
     return  print(number_one, number_two)
 
     if(number_one > number_two):
@@ -33,7 +33,7 @@
         return print(card_two)
     elif (number_one == number_two):
         return print(card_one, card_two)
-    
+
 higher_card(2, 3)
 '''
 
@@ -62,7 +62,7 @@ def higher_card(card_one, card_two):
         return card_two
     else:
         return (card_one, card_two)
-    
+
 # Exercise 3
 
 def value_of_ace(card_one, card_two):
@@ -91,7 +91,7 @@ def value_of_ace(card_one, card_two):
         new_card_A = 11
         print('Menor que 5: ', new_card_A)
         return new_card_A
-    
+
 #print(value_of_ace('8', '2'))
 #print(value_of_ace('10', '2'))
 
@@ -110,10 +110,10 @@ def is_blackjack(card_one, card_two):
         blackjack = False
         print('False: ', blackjack)
         return blackjack
-    
+
 is_blackjack('A','J')
 is_blackjack('A','Q')
-is_blackjack('A','K')  
+is_blackjack('A','K')
 is_blackjack('J','A')
 is_blackjack('J','A')
 is_blackjack('J','A')
@@ -121,4 +121,24 @@ is_blackjack('J', '2')
 is_blackjack('4', 'K')
 is_blackjack('Q', '9')
 is_blackjack('5', 'A')
-    
+
+#Darts Exercise
+
+def score(x, y):
+    distance = x**2 + y**2
+    if distance <= 1**2:
+        print(10)
+        return 10
+    elif distance <= 5**2:
+        print(5)
+        return 5
+    elif distance <= 10**2:
+        print(1)
+        return 1
+    else:
+        print(0)
+        return 0
+
+score(4,-3)
+score(-3.6, -3.6)
+score(7.1, -7.1)
