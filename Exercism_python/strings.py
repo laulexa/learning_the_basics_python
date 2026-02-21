@@ -1,3 +1,78 @@
+#Learning
+single_quoted = 'These allow "double quoting" without "escape" characters.'
+double_quoted = "These allow embedded 'single quoting', so you don't have to use an 'escape' character"
+
+triple_quoted = '''Three single quotes or "double quotes" in a row allow for multi-line string literals.
+  Line break characters, tabs and other whitespace is fully supported. Remember - The escape "\" character is also available if needed (as can be seen below). 
+  
+  You\'ll most often encounter multi-line strings as "doc strings" or "doc tests" written just below the first line of a function or class definition.
+    They\'re often used with auto documentation ✍ tools.
+    '''
+my_number = 42
+new_num = str(my_number)
+print(new_num)
+print(type(new_num))
+#"42"
+
+numbers = [1,3,5,7]
+my_num = str(numbers)
+print(my_num)
+print(type(my_num))
+#'[1,3,5,7]'
+
+creative = '창의적인'
+print(creative[0])
+print(creative[1])
+print(creative[2])
+print(len(creative[0]))
+print(type(creative))
+print(creative[0:1])
+
+moon_and_stars = '🌟🌟🌙🌟🌟⭐'
+print(moon_and_stars[:-1])
+print(moon_and_stars[:-2])
+print(moon_and_stars[:-3])
+print(moon_and_stars[:-4])
+print(moon_and_stars[2:3])
+print(moon_and_stars[2:])
+print(moon_and_stars[2:4])
+print(moon_and_stars[4:5])
+
+cat_ipsum = "Destroy house in 5 seconds command the hooman."
+cat_split = cat_ipsum.split()
+print(cat_split)
+#['Destroy', 'house', 'in', '5', 'seconds', 'command', 'the', 'hooman.']
+
+cat_words = "feline, four-footed, ferocious, furry"
+new_split = cat_words.split(',')
+print(new_split)
+#['feline', ' four-footed', ' ferocious', ' furry']
+
+chickens = ["hen", "egg", "rooster"] # Lists are iterable.
+new_list = (' '.join(chickens))
+print(new_list)
+#'hen egg rooster'
+#' 🌿 '.join(chickens)
+#'hen 🌿 egg 🌿 rooster'
+
+flowers = ("rose", "daisy", "carnation")  # Tuples are iterable.
+flower_list = '*-*'.join(flowers)
+print(flower_list)
+#'rose*-*daisy*-*carnation'
+
+phrase = "This is my string"  # Strings are iterable, but be careful!
+new_phrase = '..'.join(phrase)
+print(new_phrase)
+#'T..h..i..s.. ..i..s.. ..m..y.. ..s..t..r..i..n..g'
+# Separators are inserted **between** elements, but can be any string (including spaces).
+
+under_words = ['under', 'current', 'sea', 'pin', 'dog', 'lay']
+separator = ' ⤴️ under' # Note the leading space, but no trailing space.
+new_separator = separator.join(under_words)
+print(new_separator)
+#'under ⤴️ undercurrent ⤴️ undersea ⤴️ underpin ⤴️ underdog ⤴️ underlay'
+
+# Exercises
 def remove_suffix_ness(word):
     my_new_list_one = []
     #print(word[0][:-5])
