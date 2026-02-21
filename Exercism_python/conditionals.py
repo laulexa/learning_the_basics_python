@@ -23,3 +23,52 @@ response("Okay if like my  spacebar  quite a bit?   ")
 
 #Raindrops
 
+def convert(number):
+    result = ""
+    if number % 3 == 0:
+        result = result + "Pling"
+        print('Pling')
+    if number % 5 == 0: 
+        result = result + "Plang"
+        print('Plang')
+    if number % 7 == 0:
+        result = result + "Plong"
+        print('Plong')
+    if number % 3 != 0 and number % 5 != 0 and number % 7 != 0: 
+        print(number)
+        return str(number)
+    print("result",result)
+    return result
+
+convert(160)
+
+'''
+improved
+def raindrop_speak(number):
+    result = ""
+
+    if number % 3 == 0:
+        result += "Pling"
+    if number % 5 == 0:
+        result += "Plang"
+    if number % 7 == 0:
+        result += "Plong"
+
+    if result == "":
+        return str(number)
+    return result
+
+or
+
+def raindrop_speak(number):
+    result = ""
+
+    if number % 3 == 0:
+        result += "Pling"
+    if number % 5 == 0:
+        result += "Plang"
+    if number % 7 == 0:
+        result += "Plong"
+
+    return result if result else str(number)
+'''
